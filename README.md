@@ -1,4 +1,6 @@
-[![letsencrypt](https://github.com/letsencrypt/website/raw/master/images/le-logo-wide.png)][https://letsencrypt.org/]
+[letsencrypt]: https://letsencrypt.org/
+
+[![letsencrypt](https://github.com/letsencrypt/website/raw/master/images/le-logo-wide.png)][letsencrypt]
 
 ## Usage
 
