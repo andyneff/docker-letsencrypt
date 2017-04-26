@@ -1,0 +1,17 @@
+version: '3.2'
+
+services:
+  letsencrypt:
+    build:
+      context: .
+    image: vsiri/letsencrypt:latest
+    volumes:
+      - type: bind
+        source: /etc/letsencrypt
+        target: /etc/letsencrypt
+    restart: "no"
+    ports:
+      - "${HTTP_PORT}:80"
+      - "${HTTPS_PORT}:443"
+    entrypoint: /opt/certbot/bin/certbot
+    command: --help

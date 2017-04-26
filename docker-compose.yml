@@ -1,0 +1,18 @@
+version: '3.2'
+
+services:
+  letsencrypt:
+    build:
+      context: .
+    image: vsiri/letsencrypt:latest
+    volumes:
+      - type: bind
+        source: /etc/letsencrypt
+        target: /etc/letsencrypt
+    restart: always
+    deploy:
+      restart_policy:
+        condition: any
+    ports:
+      - "${HTTP_PORT}:80"
+      - "${HTTPS_PORT}:443"
