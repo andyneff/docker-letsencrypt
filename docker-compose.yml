@@ -4,7 +4,7 @@ services:
   letsencrypt:
     build:
       context: .
-    image: vsiri/letsencrypt:latest
+    image: andyneff/letsencrypt:latest
     volumes:
       - type: bind
         source: /etc/letsencrypt
