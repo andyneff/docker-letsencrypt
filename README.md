@@ -17,7 +17,8 @@ docker-compose run --service-ports letsencrypt certonly --standalone --agree-tos
   --no-eff-email --email <email> -d <URL> ...
 ```
 
-All certbot commands can be executed with `docker-compose run letsencrypt`
+All certbot commands can be executed with `docker-compose run letsencrypt`, for
+example `docker-compose run --service-ports letsencrypt renew --force-renewal`
 
 ---
 
