@@ -1,6 +1,6 @@
 [letsencrypt]: https://letsencrypt.org/
 
-[![letsencrypt](https://github.com/letsencrypt/website/raw/master/images/le-logo-wide.png)][letsencrypt]
+[![letsencrypt](https://raw.githubusercontent.com/letsencrypt/website/dba3d7067c54a6f25f5f9f1cd3e7886edfb77ad1/static/images/le-logo-wide.png)][letsencrypt]
 
 ## Usage
 
