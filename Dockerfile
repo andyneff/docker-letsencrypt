@@ -1,8 +1,10 @@
-FROM alpine:3.5 AS stage1
+FROM alpine:3.10 AS dep_stage
 
-RUN apk --no-cache add python openssl
+RUN apk --no-cache add python3 openssl
 
-RUN apk --no-cache add py-virtualenv gcc python-dev openssl-dev libffi-dev musl-dev
+FROM dep_stage as virtualenv
+
+RUN apk --no-cache add py3-virtualenv gcc python3-dev openssl-dev libffi-dev musl-dev
 
 RUN virtualenv /opt/certbot && \
     . /opt/certbot/bin/activate && \
@@ -10,11 +12,9 @@ RUN virtualenv /opt/certbot && \
 
 # apk del py-virtualenv gcc python-dev openssl-dev libffi-dev musl-dev
 
-FROM alpine:3.5
+FROM dep_stage
 
-RUN apk --no-cache add python openssl
-
-COPY --from=stage1 /opt/certbot /opt/certbot
+COPY --from=virtualenv /opt/certbot /opt/certbot
 
 RUN apk --no-cache add python openssl dcron
 
